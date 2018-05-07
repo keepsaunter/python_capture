@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def jsonRes(st='suc', msg='', data={}):
 	import json
 	res = {}

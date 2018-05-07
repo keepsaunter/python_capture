@@ -1,4 +1,5 @@
 /instance
-/conf/config.py
+/conf/config2.py
 __pycache__
 /applic
+/venv
