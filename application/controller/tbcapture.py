@@ -16,7 +16,8 @@ def index(goods_id):
 	if detail_url:
 		detail_data = requests.get("http:"+detail_url)
 		if detail_data.text:
-			res_detail = [x+'_760x760Q50s50.jpg_.webp' for x in re.findall(r'src=\"([^\"]*)\"', detail_data.text) if re.search(r'.jpg$', x)]
+			# res_detail = [x+'_760x760Q50s50.jpg_.webp' for x in re.findall(r'src=\"([^\"]*)\"', detail_data.text) if re.search(r'\.(jpg|png)$', x)]
+			res_detail = [x for x in re.findall(r'src=\"([^\"]*)\"', detail_data.text) if re.search(r'\.(jpg|png)$', x)]
 			# print(res_detail)
 			return jsonRes(res_detail)
 		else: return  jsonRes(404, 'goods detail is not exist')
